@@ -16,9 +16,9 @@
 
 ### 2. Train
 
-python tools/train.py configs/__custom/detectors_82split.py
+```python tools/train.py configs/__custom/detectors_82split.py```
 
 ### 3. Test
 
-python tools/test.py configs/__custom/detectors_82split.py work_dirs/detectors/2022년_7월_29일_10시_32분_20초_detectors50_trainallTrue_bri0.2_cont0.8_sat0.2_mstrain-0.3_scale0.1_cut400_hole2_prob0.6_epoch30_blur5_LB_Best/epoch_${target}.pth \
---format-only --eval-options jsonfile_prefix=./result_json/detectors50_LBBest_re_epoch_15
+```python tools/test.py configs/__custom/detectors_82split.py work_dirs/detectors/2022년_7월_29일_10시_32분_20초_detectors50_trainallTrue_bri0.2_cont0.8_sat0.2_mstrain-0.3_scale0.1_cut400_hole2_prob0.6_epoch30_blur5_LB_Best/epoch_${target}.pth \
+--format-only --eval-options jsonfile_prefix=./result_json/detectors50_LBBest_re_epoch_15```
