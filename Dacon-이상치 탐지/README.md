@@ -3,3 +3,7 @@
 ## Training
 
 ``` python temp_badtest.py ```
+
+## Test
+
+``` python test.py ```
