@@ -1,0 +1,33 @@
+python tools/train.py configs/__custom/detectors_82split.py
+
+python tools/test.py configs/__custom/maskrcnn.py work_dirs/2022년_7월_8일_14시_4분_47초_MaskRCNN/latest.pth --format-only --eval-options jsonfile_prefix=./result_json/detectors_epoch3 --show-dir ./result/maskrcnn_epoch1/
+
+python tools/misc/browse_dataset.py configs/__custom/detectors_82split.py --output-dir 'custom_dataset_check'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+python tools/test.py configs/__custom/detectors_82split.py work_dirs/detectors/2022년_7월_10일_23시_42분_0_detectors50_82split_100:0_sgd_bricont0.1/epoch_5.pth --format-only --eval-options jsonfile_prefix=./result_json/detectors_82split_100:0_sgd_bricont0.1_epoch5_conf0.28 --show-dir ./result/detectors_82split_100:0_rot360_epoch20_ttaflip_conf0.25
+
+
+python tools/test.py configs/__custom/maskrcnn_82split.py work_dirs/maskrcnn/2022년_7월_8일_23시_53분_34초_MaskRCNN_82split/epoch_65.pth \
+--format-only --eval-options jsonfile_prefix=./result_json/maskrcnn_82split_epoch65_mAP0.625_conf0.2 --show-dir ./result/maskrcnn_82split_epoch65_mAP0.625_conf0.2 
+
+
+############ LB Best ############
+python tools/test.py configs/__custom/detectors_82split.py work_dirs/detectors/2022년_7월_10일_13시_44분_10초_detectors50_82split_100:0/epoch_18.pth \
+--format-only --eval-options jsonfile_prefix=./result_json/detectors_82split_100:0_epoch18_LBbest_softnms0.8 --show-dir ./result/maskrcnn_82split_epoch65_mAP0.625_conf0.2 
+
