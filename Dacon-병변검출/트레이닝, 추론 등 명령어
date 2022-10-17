@@ -1,0 +1,5 @@
+python tools/test.py configs/balloon/detectors_dacon.py work_dirs/Detectors_train_allimages/latest.pth --format-only --eval-options jsonfile_prefix=./result_detectors_epoch18
+
+python tools/train.py configs/balloon/detectors_dacon.py
+
+python tools/misc/browse_dataset.py configs/balloon/swin_dacon.py --output-dir 'custom_dataset_check'
