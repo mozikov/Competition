@@ -52,31 +52,7 @@ model = smp.unetplusplus.UnetPlusPlus(encoder_name="{}".format(model_name),
 test_path = sorted(glob.glob('datasets/test/lr/*'))
 
 
-# In[ ]:
 
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[2]:
 
 
 total = np.zeros(shape=(5, 18, 2048, 2048, 3))
@@ -84,7 +60,7 @@ total = np.zeros(shape=(5, 18, 2048, 2048, 3))
 
 for i in range(5):
     
-    model.load_state_dict(torch.load('checkpoin/Fold{}.pth'.format(i+1)))
+    model.load_state_dict(torch.load('checkpoint/Fold{}.pth'.format(i+1)))
     model.eval()
     
     fold = []
@@ -150,58 +126,10 @@ for i in range(5):
         fold += [image_file]
     
     total[i] = np.array(fold)
-# cv2.imwrite('{}.png'.format(i + 20000), cv2.cvtColor((image_file*255).astype('uint8'), cv2.COLOR_BGR2RGB))
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[3]:
 
 
 total = total.mean(0)
-
-
-# In[4]:
-
-
 total = np.clip(total, 0, 1)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[5]:
 
 
 for i in range(len(total)):
@@ -210,37 +138,9 @@ for i in range(len(total)):
     cv2.imwrite('{}.png'.format(i + 20000), cv2.cvtColor((image*255).astype('uint8'), cv2.COLOR_BGR2RGB))
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[6]:
-
-
 submission = zipfile.ZipFile("submission.zip", 'w')
 for i in range(18):
     
     path = '{}.png'.format(i+20000)
     submission.write(path)
 submission.close()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
