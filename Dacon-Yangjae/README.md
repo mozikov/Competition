@@ -1,5 +1,4 @@
-# AI 양재 허브 인공지능 오픈소스 경진대회
-## Private 6th , 3중대 3소대장
+# AI 양재 허브 인공지능 오픈소스 경진대회 - Private 6th , 3중대 3소대장
 
 
 ## 0. Requirements
