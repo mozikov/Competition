@@ -39,6 +39,6 @@
 
 
 ## 2. Test
-#### 2.1. 'checkpoint' 폴더 생성 후 5개 가중치를 다운로드 받아 넣어줌 [Download](https://drive.google.com/drive/folders/1oD8iJ5gg5nNqsGjC5vhY_icJhpyDKRbt)
+#### 2.1. 'checkpoint' 폴더 생성 후 5개의 가중치 파일을 다운로드 받아 넣어줌 [Download](https://drive.google.com/drive/folders/1oD8iJ5gg5nNqsGjC5vhY_icJhpyDKRbt)
 #### 2.2 ```python test.py``` 실행
 #### 2.3 실행 후 Private 점수(24.26192) 재현이 가능한 `submission.zip` 파일이 생성됨
