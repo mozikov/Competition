@@ -16,15 +16,17 @@ The detalis of my solution is in my solution post written in Kaggle Discusstion 
 # Setup
 
 ### Dataset Preparation
-Download competition datasets from ([kaggle link])(https://www.kaggle.com/competitions/vesuvius-challenge-ink-detection/data)
+Download competition datasets from [kaggle link](https://www.kaggle.com/competitions/vesuvius-challenge-ink-detection/data)
 and put the zip file in ```vesuvius-challenge-ink-detection``` folder and unzip.
 
+```
 $ tree ./vesuvius-challenge-ink-detection -L 1
 ./
 ├── vesuvius-challenge-ink-detection.zip
 ├── sample_submission.csv
 ├── test
 └── train
+```
 
 ### Docker setup
 ``` 
