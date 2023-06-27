@@ -53,10 +53,10 @@ import datetime
 
 
 
-# sys.path.append('/kaggle/input/pretrainedmodels/pretrainedmodels-0.7.4')
-# sys.path.append('/kaggle/input/efficientnet-pytorch/EfficientNet-PyTorch-master')
-# sys.path.append('/kaggle/input/timm-pytorch-image-models/pytorch-image-models-master')
-# sys.path.append('/kaggle/input/segmentation-models-pytorch/segmentation_models.pytorch-master')
+# sys.path.append('/kaggle-ink-4th-place/input/pretrainedmodels/pretrainedmodels-0.7.4')
+# sys.path.append('/kaggle-ink-4th-place/input/efficientnet-pytorch/EfficientNet-PyTorch-master')
+# sys.path.append('/kaggle-ink-4th-place/input/timm-pytorch-image-models/pytorch-image-models-master')
+# sys.path.append('/kaggle-ink-4th-place/input/segmentation-models-pytorch/segmentation_models.pytorch-master')
 
 
 # In[3]:
@@ -128,14 +128,14 @@ parser.add_argument(
 parser.add_argument(
     "--batch_size",
     type=int,
-    default=8,
+    default=16,
     help='batch_size'
     )
 
 parser.add_argument(
     "--epochs",
     type=int,
-    default=100,
+    default=70,
     help='epochs'
     )
 
@@ -778,7 +778,7 @@ class Decoder(nn.Module):
 class SegModel(nn.Module):
     def __init__(self, resnet_depth):
         super().__init__()
-        # original kaggle code
+        # original kaggle-ink-4th-place code
         # self.encoder = generate_model(model_depth=args.resnet_depth, n_input_channels=1)
 
         self.resnet_depth = resnet_depth
@@ -792,7 +792,7 @@ class SegModel(nn.Module):
                                       n_classes=1039,
                                       no_max_pool=True)
 
-        # original kaggle code
+        # original kaggle-ink-4th-place code
         # self.decoder = Decoder(encoder_dims=[64, 128, 256, 512], upscale=4)
 
         # original paper code
@@ -876,7 +876,7 @@ from models.resnext import resnext101
 class SegModel_resnext101(nn.Module):
     def __init__(self):
         super().__init__()
-        # original kaggle code
+        # original kaggle-ink-4th-place code
         # self.encoder = generate_model(model_depth=args.resnet_depth, n_input_channels=1)
 
         # original paper code
