@@ -39,29 +39,29 @@ import glob
 from skimage.morphology import remove_small_objects
 
 
-# !pip install /kaggle/input/files-whl/whlfiles/einops-0.6.1-py3-none-any.whl
-# !pip install /kaggle/input/files-whl/whlfiles/iopath-0.1.10-py3-none-any.whl
-# !pip install /kaggle/input/files-whl/whlfiles/fvcore-0.1.5.post20221221-py3-none-any.whl
+# !pip install /kaggle-ink-4th-place/input/files-whl/whlfiles/einops-0.6.1-py3-none-any.whl
+# !pip install /kaggle-ink-4th-place/input/files-whl/whlfiles/iopath-0.1.10-py3-none-any.whl
+# !pip install /kaggle-ink-4th-place/input/files-whl/whlfiles/fvcore-0.1.5.post20221221-py3-none-any.whl
 
 
 threshold = 0.47
 img_size = 256
 in_chans = 22
 resnet_depth = 152
-weights_path_movinet = '/kaggle/input/inchans16-movineta5-longepochs-21252428'
-weights_path_resnet152 = '/kaggle/input/2023-06-05-12-22-clip-50-200'
-weights_path_resnet200 = '/kaggle/input/2023-06-08-12-22-clip50-200-ls03-resnet200'
-weights_path_resnext = '/kaggle/input/2023-06-07-12-22-clip50-200-ls03-resnext101'
+weights_path_movinet = '/kaggle-ink-4th-place/input/inchans16-movineta5-longepochs-21252428'
+weights_path_resnet152 = 'submitted_weights/2023-06-05-12-22-clip-50-200'
+weights_path_resnet200 = 'submitted_weights/2023-06-08-12-22-clip50-200-ls03-resnet200'
+weights_path_resnext = 'submitted_weights/2023-06-07-12-22-clip50-200-ls03-resnext101'
 weights_path_resnet_tmp = 'weights-tmp'
 
 
-# LB Best 0.79 4th -> '/kaggle/input/2023-06-05-12-22-clip-50-200' & '/kaggle/input/2023-06-07-12-22-clip50-200-ls03-resnext101' & '/kaggle/input/2023-06-08-12-22-clip50-200-ls03-resnet200' stride 5 no remove
-# LB Best 0.79 -> '/kaggle/input/2023-06-05-12-22-clip-50-200' & '/kaggle/input/2023-06-07-12-22-clip50-200-ls03-resnext101'
-# LB Best 0.78 -> '/kaggle/input/2023-06-05-12-22-clip-50-200' & thr 0.5, no remove
-# LB Best 0.78 -> '/kaggle/input/2023-05-30-randomcrop12-22-randompaste-cutout2-50e' & threshold 0.6, remove 0.0003
-# resnet solo LB Best 0.77 -> '/kaggle/input/2023-05-30-randomcrop12-22-randompaste-cutout2-50e' & threshold 0.6, no remove
-# resnet solo LB Best 0.76 -> '/kaggle/input/2023-05-28-randomcrop14-18-inchans18-fromstart' (name before modification -> '/kaggle/input/2023-05-28-randomcrop16-18-inchans18-fromstart')
-# resnet solo LB Best 0.74 -> /kaggle/input/inchans16-resnet152-stride3
+# LB Best 0.79 4th -> '/kaggle-ink-4th-place/input/2023-06-05-12-22-clip-50-200' & '/kaggle-ink-4th-place/input/2023-06-07-12-22-clip50-200-ls03-resnext101' & '/kaggle-ink-4th-place/input/2023-06-08-12-22-clip50-200-ls03-resnet200' stride 5 no remove
+# LB Best 0.79 -> '/kaggle-ink-4th-place/input/2023-06-05-12-22-clip-50-200' & '/kaggle-ink-4th-place/input/2023-06-07-12-22-clip50-200-ls03-resnext101'
+# LB Best 0.78 -> '/kaggle-ink-4th-place/input/2023-06-05-12-22-clip-50-200' & thr 0.5, no remove
+# LB Best 0.78 -> '/kaggle-ink-4th-place/input/2023-05-30-randomcrop12-22-randompaste-cutout2-50e' & threshold 0.6, remove 0.0003
+# resnet solo LB Best 0.77 -> '/kaggle-ink-4th-place/input/2023-05-30-randomcrop12-22-randompaste-cutout2-50e' & threshold 0.6, no remove
+# resnet solo LB Best 0.76 -> '/kaggle-ink-4th-place/input/2023-05-28-randomcrop14-18-inchans18-fromstart' (name before modification -> '/kaggle-ink-4th-place/input/2023-05-28-randomcrop16-18-inchans18-fromstart')
+# resnet solo LB Best 0.74 -> /kaggle-ink-4th-place/input/inchans16-resnet152-stride3
 # movinet LB best 0.63 -> inchans16-movineta5-50epoch
 # movinet LB ensemble best 0.72 -> inchans16-movineta5-longepochs-21252428
 # resnet LB best 0.71 -> weights-3dcnn-inchans16-resnetdepth152-4fold6281
@@ -97,14 +97,14 @@ iter_num = 50
 
 
 
-# sys.path.append('/kaggle/input/pretrainedmodels/pretrainedmodels-0.7.4')
-# sys.path.append('/kaggle/input/efficientnet-pytorch/EfficientNet-PyTorch-master')
-# sys.path.append('/kaggle/input/timm-pytorch-image-models/pytorch-image-models-master')
-# sys.path.append('/kaggle/input/segmentation-models-pytorch/segmentation_models.pytorch-master')
-# sys.path.append('/kaggle/input/segmentation/segmentation_models_pytorch_my')
-# sys.path.append('/kaggle/input/resnet3d')
-# sys.path.append('/kaggle/input/resnet')
-# sys.path.append('/kaggle/input/movinet/MoViNet-pytorch')
+# sys.path.append('/kaggle-ink-4th-place/input/pretrainedmodels/pretrainedmodels-0.7.4')
+# sys.path.append('/kaggle-ink-4th-place/input/efficientnet-pytorch/EfficientNet-PyTorch-master')
+# sys.path.append('/kaggle-ink-4th-place/input/timm-pytorch-image-models/pytorch-image-models-master')
+# sys.path.append('/kaggle-ink-4th-place/input/segmentation-models-pytorch/segmentation_models.pytorch-master')
+# sys.path.append('/kaggle-ink-4th-place/input/segmentation/segmentation_models_pytorch_my')
+# sys.path.append('/kaggle-ink-4th-place/input/resnet3d')
+# sys.path.append('/kaggle-ink-4th-place/input/resnet')
+# sys.path.append('/kaggle-ink-4th-place/input/movinet/MoViNet-pytorch')
 
 # import segmentation_models_pytorch as smp
 # from resnet3d import *
@@ -186,7 +186,7 @@ class CFG:
     max_grad_norm = 1000
 
     print_freq = 50
-    num_workers = 2
+    num_workers = 0
 
     seed = 42
 
@@ -328,7 +328,7 @@ class CustomDataset(Dataset):
             data = self.transform(image=image)
             image = data['image'].unsqueeze(0)
 
-            return image, image_horizontal_flip, None, mask
+            return image, image_horizontal_flip, [], mask
 
 
 def make_test_dataset(fragment_id):
@@ -445,7 +445,7 @@ class SegModel(nn.Module):
 class SegModel_resnext101(nn.Module):
     def __init__(self):
         super().__init__()
-        # original kaggle code
+        # original kaggle-ink-4th-place code
         # self.encoder = generate_model(model_depth=args.resnet_depth, n_input_channels=1)
 
         # original paper code
@@ -468,7 +468,7 @@ class SegModel_resnext101(nn.Module):
 class SegModel_resnext152(nn.Module):
     def __init__(self):
         super().__init__()
-        # original kaggle code
+        # original kaggle-ink-4th-place code
         # self.encoder = generate_model(model_depth=args.resnet_depth, n_input_channels=1)
 
         # original paper code
@@ -633,10 +633,10 @@ class EnsembleModel:
         self.models.append(model)
 
 
-movinet_weights_list = glob.glob(os.path.join(weights_path_movinet, '*'))
-resnet152_weights_list = glob.glob(os.path.join(weights_path_resnet152, '*'))
-resnet200_weights_list = glob.glob(os.path.join(weights_path_resnet200, '*'))
-resnext_weights_list = glob.glob(os.path.join(weights_path_resnext, '*'))
+movinet_weights_list = glob.glob(os.path.join(weights_path_movinet, '*.pth'))
+resnet152_weights_list = glob.glob(os.path.join(weights_path_resnet152, '*.pth'))
+resnet200_weights_list = glob.glob(os.path.join(weights_path_resnet200, '*.pth'))
+resnext_weights_list = glob.glob(os.path.join(weights_path_resnext, '*.pth'))
 
 
 def build_ensemble_model():
@@ -696,13 +696,13 @@ def build_ensemble_model():
     #         _model.to(device)
 
     #         if i == 0:
-    #             weights = '/kaggle/input/3fold-balance-fold1-tmp/Unet_fold1_epoch20_score0.6237474369132259.pth'
+    #             weights = '/kaggle-ink-4th-place/input/3fold-balance-fold1-tmp/Unet_fold1_epoch20_score0.6237474369132259.pth'
     #         elif i == 1:
-    #             weights = '/kaggle/input/weights-3dcnn-inchans16-resnetdepth152-4fold6281/Unet_fold2_best.pth'
+    #             weights = '/kaggle-ink-4th-place/input/weights-3dcnn-inchans16-resnetdepth152-4fold6281/Unet_fold2_best.pth'
     #         elif i == 2:
-    #             weights = '/kaggle/input/weights-3dcnn-inchans16-resnetdepth152-4fold6281/Unet_fold3_best.pth'
+    #             weights = '/kaggle-ink-4th-place/input/weights-3dcnn-inchans16-resnetdepth152-4fold6281/Unet_fold3_best.pth'
     #         else:
-    #             weights = '/kaggle/input/weights-3dcnn-inchans16-resnetdepth152-4fold6281/Unet_fold4_best.pth'
+    #             weights = '/kaggle-ink-4th-place/input/weights-3dcnn-inchans16-resnetdepth152-4fold6281/Unet_fold4_best.pth'
 
     return model
 
