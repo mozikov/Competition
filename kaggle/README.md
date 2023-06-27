@@ -44,7 +44,7 @@ All pretrained weights is MIT LICENSE, which is not against commercial use.
 - r3d152_KM_200ep.pth, r3d200_KM_200ep.pth : from https://github.com/kenshohara/3D-ResNets-PyTorch
 - kinetics_resnext_101_RGB_16_best.pth : from https://github.com/okankop/Efficient-3DCNNs
 
-### submitted weights preparation (for inference)
+### Submitted weights preparation (for inference)
 By running code below, you can prepare 12 submitted weights for training.
 ```
 source prepare_submitted_weights.sh
