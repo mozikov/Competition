@@ -56,6 +56,13 @@ docker build -t kaggle -f Dockerfile .
 docker run --gpus all --rm -it -v ${PWD}:/home/dev/kaggle --name kaggle kaggle:latest
 ```
 
+※If you meet gpg error while running ```apt-get update``` in Dockerfile, try:
+```
+docker image prune
+docker container prune
+```
+
+
 # Train
 You can train 3 each model(leading to ensemble) using code below.
 ```
