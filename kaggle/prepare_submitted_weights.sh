@@ -1,6 +1,6 @@
-kaggle datasets download -d ahnheeyoung1/2023-06-05-12-22-clip-50-200
-kaggle datasets download -d ahnheeyoung1/2023-06-08-12-22-clip50-200-ls03-resnet200
-kaggle datasets download -d ahnheeyoung1/2023-06-07-12-22-clip50-200-ls03-resnext101
+kaggle datasets download ahnheeyoung1/2023-06-05-12-22-clip-50-200
+kaggle datasets download ahnheeyoung1/2023-06-08-12-22-clip50-200-ls03-resnet200
+kaggle datasets download ahnheeyoung1/2023-06-07-12-22-clip50-200-ls03-resnext101
 
 mkdir -p submitted_weights/2023-06-05-12-22-clip-50-200
 mkdir -p submitted_weights/2023-06-08-12-22-clip50-200-ls03-resnet200
