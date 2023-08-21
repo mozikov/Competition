@@ -1,6 +1,0 @@
---------
-HOSTNAME = dive602
-SLURM_JOB_NAME = inf
-SLURM_CPUS_PER_TASK = 1
-CUDA_VISIBLE_DEVICES = 2
---------
